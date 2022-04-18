@@ -7,18 +7,18 @@ module RegFile(
 
       reg [15:0] RegData [0:15];
       initial begin
-            $readmemh("reg_init.mem", RegData);
+            $readmemh("reg_init.mem", RegData); // Initialize Register File
       end
 
-      always @(*) begin
-            rd1 <= RegData[rs1];
-            rd2 <= RegData[rs2];
-            rd3 <= RegData[rw];
+      always @(rs1, rs2, rw, RegWrite, WD) begin
+            rd1 <= RegData[rs1]; // Source Reg - 1
+            rd2 <= RegData[rs2]; // Source Reg - 2
+            rd3 <= RegData[rw];  // Destination Reg
       
             if(RegWrite)
-                  RegData[rw] <= WD;
+                  RegData[rw] <= WD; // Write Data in RegFile based on Signal
 
-            $writememh("reg_fin.mem", RegData);
+            $writememh("reg_fin.mem", RegData); // Write updated Register File
       end
 
 endmodule

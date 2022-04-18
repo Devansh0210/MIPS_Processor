@@ -1,0 +1,4 @@
+iverilog -o mem_out .\data_mem.v
+iverilog -o reg_test .\reg_file.v
+vvp .\reg_test
+cp * '..\Comparch slides\MIPS_Processor\'

@@ -16,8 +16,8 @@ module RegFile(
             rd3 <= RegData[rw];  // Destination Reg
       
             if(RegWrite)
-                  RegData[rw] <= WD; // Write Data in RegFile based on Signal
-
+                  RegData[rw] = WD; // Write Data in RegFile based on Signal
+            
             $writememh("reg_fin.mem", RegData); // Write updated Register File
       end
 
@@ -50,6 +50,9 @@ module tb();
             tr3 <= 4'd1;
             rw <= 1;
             dw <= 16'hdada;
+
+            #10 tr1 <= 4'd13;
+            dw <= 16'heeee;       
       end
 
 endmodule

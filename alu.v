@@ -5,15 +5,19 @@ module ALU(
       output reg [15:0] res,
       output zero
 );
+      
 
-      always @ (*) begin
+      always @(*) begin
+            
             case(opcode)
                   3'b000 : res <= A + B; // Add
                   3'b001 : res <= A - B; // Subtract
                   3'b010 : res <= A << B; // Left Shfit
                   3'b011 : res <= A >> B; // Right Shfit
                   3'b100 : res <= (A >>> B) ; // Arithmetic Right Shift
-                  default : res <= A + B;
+                  3'b101 : res <= (A ~& B); // NAND Operation
+                  3'b110 : res <= (A | B); // Or
+                  default : res <= A + B; // Default Case
             endcase
       end
 

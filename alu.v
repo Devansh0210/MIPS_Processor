@@ -6,8 +6,6 @@ module ALU(
       output zero
 );
 
-
-
       always @ (*) begin
             case(opcode)
                   3'b000 : res <= A + B; // Add
@@ -47,8 +45,6 @@ module tb();
             Bt <= 16'd3;
             #10 $finish;
       end
-
-
 
       initial begin
             opt = 3'd0;

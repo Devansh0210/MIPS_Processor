@@ -1,34 +1,33 @@
 module RegDecoder(
-      input [1:0] Rd, Rp,
+      input [3:0] R,
       output [3:0] ext_Rd, ext_Rp 
 );
 
-      assign ext_Rd = {2'b11, Rd};
-      assign ext_Rp = {2'b10, Rp};
+      assign ext_Rd = {2'b11, R[3:2]};
+      assign ext_Rp = {2'b10, R[1:0]};
 
 endmodule
 
-module tb();
+// module tb();
 
-      reg [1:0] r1, r2;
-      wire [3:0] er1, er2;
+//       reg [3:0] r1;
+//       wire [3:0] er1, er2;
 
-      RegDecoder uut (
-            .Rd(r1),
-            .Rp(r2),
-            .ext_Rd(er1),
-            .ext_Rp(er2)
-      );
+//       RegDecoder uut (
+//             .R(r1),
+//             .ext_Rd(er1),
+//             .ext_Rp(er2)
+//       );
 
-      initial
-            $monitor("%b --> %b || %b --> %b", r1, er1, r2, er2);
+//       initial
+//             $monitor("%b --> %b || %b", r1, er1, er2);
 
-      initial begin
-            r1 <= 2'b00;
-            r2 <= 2'b10;
+//       initial begin
+//             r1 <= 4'b1010;
+//             // r2 <= 2'b10;
 
-            #10 r1 <= 2'b11;
-            r2 <= 2'b01;
-      end
+//             #10 r1 <= 4'b1100;
+//             // r2 <= 2'b01;
+//       end
 
-endmodule
+// endmodule

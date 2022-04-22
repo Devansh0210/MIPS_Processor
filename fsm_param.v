@@ -1,0 +1,16 @@
+	parameter S0 = 4'b0;
+	parameter S1 = 4'b1;
+	parameter S2 = 4'b10;
+	parameter S3 = 4'b11;
+	parameter S4 = 4'b100;
+	parameter S5 = 4'b101;
+	parameter S6 = 4'b110;
+	parameter S7 = 4'b111;
+	parameter S8 = 4'b1000;
+	parameter S9 = 4'b1001;
+	parameter S10 = 4'b1010;
+	parameter S11 = 4'b1011;
+	parameter S12 = 4'b1100;
+	parameter S13 = 4'b1101;
+	parameter S14 = 4'b1110;
+	parameter S15 = 4'b1111;

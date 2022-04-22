@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1650567709" />
+    <testcase classname="val_proc" file="C:\Users\devan\Pictures\Courses-3-2\CompArch\MIPS_Processor\val_proc.py" lineno="8" name="test_mips_16" ratio_time="0.27926652906318666" sim_time_ns="0.001" time="0.003580808639526367" />
+  </testsuite>
+</testsuites>

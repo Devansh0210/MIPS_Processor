@@ -41,21 +41,21 @@ module ControlFSM( OP,
       output reg be;
 
       //states defination
-      parameter Fetch <= 4'b0000;
-      parameter Decode_rb <= 4'b0001;
-      parameter Decode_i <= 4'b0010;
-      parameter Decode_lsw <= 4'b0011;
-      parameter Execute_r <= 4'b0100;
-      parameter Execute_b <= 4'b0101;
-      parameter Execute_j <= 4'b0110;
-      parameter Execute_i1 <= 4'b0111;
-      parameter Execute_i2 <= 4'b1000;
-      parameter Execute_lsw <= 4'b1001;
-      parameter Writeback_r <= 4'b1011;
-      parameter Writeback_i <= 4'b1100;
-      parameter Writeback_lw <= 4'b1101;
-      parameter Writeback_sw <= 4'b1110;
-      parameter Mem_lw  <=  4'b1111;
+      parameter Fetch = 4'b0000;
+      parameter Decode_rb = 4'b0001;
+      parameter Decode_i = 4'b0010;
+      parameter Decode_lsw = 4'b0011;
+      parameter Execute_r = 4'b0100;
+      parameter Execute_b = 4'b0101;
+      parameter Execute_j = 4'b0110;
+      parameter Execute_i1 = 4'b0111;
+      parameter Execute_i2 = 4'b1000;
+      parameter Execute_lsw = 4'b1001;
+      parameter Writeback_r = 4'b1011;
+      parameter Writeback_i = 4'b1100;
+      parameter Writeback_lw = 4'b1101;
+      parameter Writeback_sw = 4'b1110;
+      parameter Mem_lw  =  4'b1111;
       //control circuit
       reg [3:0] state;
       reg [3:0] nextstate;

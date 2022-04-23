@@ -145,7 +145,7 @@ module ControlFSM( OP,
             case(state)
                   Fetch : begin
                         Pcwrite <= 1'b1;
-                        PCsrc <= 1'b0;
+                        PCsrc <= 2'b00;
                         IorD <= 1'b0;
                         Memwrite <= 1'b0;
                         MemRead <= 1'b1;
@@ -246,7 +246,7 @@ module ControlFSM( OP,
             
                   Execute_b : begin
                         Pcwrite <= 1'b0;
-                        PCsrc <= 1'b1;
+                        PCsrc <= 1'b10;
                         Memwrite <= 1'b0;
                         MemRead <= 1'b0;
                         IRwrite <= 1'b0;
@@ -256,6 +256,7 @@ module ControlFSM( OP,
                   end
             
                   Execute_j : begin 
+                        PCsrc <= 2'b10;
                         Pcwrite <= 1'b1;  
                         Memwrite <= 1'b0;
                         MemRead <= 1'b0;

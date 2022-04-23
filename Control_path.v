@@ -63,9 +63,9 @@ module ControlFSM( OP,
 
       always@(posedge clk) begin
             if(reset)
-                  state< <= Fetch;
+                  state <= Fetch;
             else 
-                  state< <= nextstate;
+                  state <= nextstate;
       end
 
       always@(state, OP) begin

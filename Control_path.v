@@ -31,7 +31,6 @@ module control
     Execute_i2=4'b1000;
     Execute_lsw=4'b1001;
     Writeback_r=4'b1011;
-    Writeback_i=4'b1100;
     Writeback_lw=4'b1101;
     Writeback_sw=4'b1110;
     Mem_lw=4'b1111;
@@ -101,16 +100,16 @@ module control
         endcase
     Execute_i1:
         case(OP)
-        4'b1001:nextstate=Writeback_i;
-        4'b1010:nextstate=Writeback_i;
-        4'b1101:nextstate=Writeback_i;
-        4'b1110:nextstate=Writeback_i;
-        4'b0111:nextstate=Writeback_i;
-        4'b0110:nextstate=Writeback_i;
+        4'b1001:nextstate=Writeback_r;
+        4'b1010:nextstate=Writeback_r;
+        4'b1101:nextstate=Writeback_r;
+        4'b1110:nextstate=Writeback_r;
+        4'b0111:nextstate=Writeback_r;
+        4'b0110:nextstate=Writeback_r;
         endcase
     Execute_i2:
         case(OP)
-        4'b0000:nextstate=Writeback_i;
+        4'b0000:nextstate=Writeback_r;
         endcase
     Execute_lsw:
         case(OP)
@@ -228,16 +227,6 @@ endcase
                     ALUsrcB=3'b000;
                     memtoReg=1'b0;
                 end
-            Writeback_i://CHECK(same as Writeback_r...................................................................)
-                begin
-                    Memwrite=1'b0;
-                    Memread=1'b0;
-                    IRwrite=1'b0;
-                    RegDst=1'b0;
-                    RegWrite=1'b1;
-                    ALUsrcB=3'b000;
-                    memtoReg=1'b0;
-                end
             Writeback_lw:
                 begin
                     Memwrite=1'b0;
@@ -266,14 +255,6 @@ endcase
 
 
     end
-   
-   
-   
-   
-   
-   
-   
-   
    initial
     begin
         PCsrc=2'b00;
